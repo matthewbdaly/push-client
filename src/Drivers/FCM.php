@@ -3,11 +3,14 @@
 namespace Matthewbdaly\PushNotification\Drivers;
 
 use Matthewbdaly\PushNotification\Contracts\Driver;
+use Http\Client\HttpClient;
+use Http\Message\MessageFactory;
 
 class FCM implements Driver
 {
-    public function __construct($argument1, $argument2)
+    public function __construct(HttpClient $client, MessageFactory $messageFactory)
     {
-        // TODO: write logic here
+        $this->client = $client;
+        $this->messageFactory = $messageFactory;
     }
 }
