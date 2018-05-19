@@ -24,4 +24,9 @@ class FCMSpec extends ObjectBehavior
     {
         $this->shouldImplement('Matthewbdaly\PushNotification\Contracts\Driver');
     }
+
+    function it_gets_name()
+    {
+        $this->getName()->shouldReturn('FCM');
+    }
 }
