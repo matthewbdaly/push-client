@@ -18,4 +18,9 @@ class Client implements ClientInterface
     {
         return $this->driver;
     }
+
+    public function send($msg)
+    {
+        return $this->getDriver()->sendRequest($msg);
+    }
 }

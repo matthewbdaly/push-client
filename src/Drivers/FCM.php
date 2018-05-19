@@ -20,4 +20,9 @@ class FCM implements Driver
     {
         return $this->name;
     }
+
+    public function sendRequest($msg)
+    {
+        return true;
+    }
 }

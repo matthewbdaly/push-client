@@ -28,4 +28,13 @@ class ClientSpec extends ObjectBehavior
     {
         $this->getDriver()->shouldReturnAnInstanceOf('Matthewbdaly\PushNotification\Contracts\Driver');
     }
+
+    function it_sends_request(Driver $driver)
+    {
+        $msg = [
+        ];
+        $driver->sendRequest($msg)->willReturn(true);
+        $this->beConstructedWith($driver);
+        $this->send($msg)->shouldReturn(true);
+    }
 }
