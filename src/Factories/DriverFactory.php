@@ -2,6 +2,8 @@
 
 namespace Matthewbdaly\PushNotification\Factories;
 
-class DriverFactory
+use Matthewbdaly\PushNotification\Contracts\Factory;
+
+class DriverFactory implements Factory
 {
 }

@@ -12,4 +12,9 @@ class DriverFactorySpec extends ObjectBehavior
     {
         $this->shouldHaveType(DriverFactory::class);
     }
+
+    function it_implements_factory_contract()
+    {
+        $this->shouldImplement('Matthewbdaly\PushNotification\Contracts\Factory');
+    }
 }
