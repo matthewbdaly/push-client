@@ -5,9 +5,15 @@ namespace spec\Matthewbdaly\PushNotification;
 use Matthewbdaly\PushNotification\Client;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Matthewbdaly\PushNotification\Contracts\Driver;
 
 class ClientSpec extends ObjectBehavior
 {
+    function let(Driver $driver)
+    {
+        $this->beConstructedWith($driver);
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType(Client::class);
