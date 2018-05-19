@@ -29,4 +29,9 @@ class FCMSpec extends ObjectBehavior
     {
         $this->getName()->shouldReturn('FCM');
     }
+
+    function it_gets_base_url()
+    {
+        $this->getBaseUrl()->shouldReturn('https://fcm.googleapis.com/v1/{parent=projects/*}/messages:send');
+    }
 }
