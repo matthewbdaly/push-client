@@ -5,7 +5,6 @@ namespace spec\Matthewbdaly\PushNotification\Drivers;
 use Matthewbdaly\PushNotification\Drivers\NullDriver;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Psr\Http\Message\ResponseInterface;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 
@@ -34,5 +33,11 @@ class NullDriverSpec extends ObjectBehavior
     function it_gets_base_url()
     {
         $this->getBaseUrl()->shouldReturn(null);
+    }
+
+    function it_returns_a_response()
+    {
+        $msg = [];
+        $this->sendRequest($msg)->shouldReturnAnInstanceOf('Psr\Http\Message\ResponseInterface');
     }
 }

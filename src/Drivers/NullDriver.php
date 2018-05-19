@@ -5,6 +5,7 @@ namespace Matthewbdaly\PushNotification\Drivers;
 use Matthewbdaly\PushNotification\Contracts\Driver;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
+use GuzzleHttp\Psr7\Response;
 
 class NullDriver extends Base implements Driver
 {
@@ -20,6 +21,6 @@ class NullDriver extends Base implements Driver
 
     public function sendRequest($msg)
     {
-        return true;
+        return new Response();
     }
 }
