@@ -12,7 +12,7 @@ class FCM implements Driver
 
     protected $baseUrl = 'https://fcm.googleapis.com/v1/{parent=projects/*}/messages:send';
 
-    public function __construct(HttpClient $client, MessageFactory $messageFactory)
+    public function __construct(string $id, HttpClient $client, MessageFactory $messageFactory)
     {
         $this->client = $client;
         $this->messageFactory = $messageFactory;

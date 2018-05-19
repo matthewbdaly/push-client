@@ -12,7 +12,8 @@ class FCMSpec extends ObjectBehavior
 {
     function let(HttpClient $client, MessageFactory $messageFactory)
     {
-        $this->beConstructedWith($client, $messageFactory);
+        $id = 'cheesy-lentils-123456';
+        $this->beConstructedWith($id, $client, $messageFactory);
     }
 
     function it_is_initializable()

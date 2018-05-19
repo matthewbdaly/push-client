@@ -11,10 +11,10 @@ use Http\Message\MessageFactory;
 
 class DriverFactory implements Factory
 {
-    public static function create($args, HttpClient $client = null, MessageFactory $messageFactory = null)
+    public static function create(string $id, HttpClient $client = null, MessageFactory $messageFactory = null)
     {
         $client = $client ?: HttpClientDiscovery::find();
         $messageFactory = $messageFactory ?: MessageFactoryDiscovery::find();
-        return new FCM($client, $messageFactory);
+        return new FCM($id, $client, $messageFactory);
     }
 }
