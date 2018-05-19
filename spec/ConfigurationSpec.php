@@ -20,4 +20,12 @@ class ConfigurationSpec extends ObjectBehavior
         $this->setId($id)->shouldReturn($this);
         $this->getId()->shouldReturn($id);
     }
+
+    function it_sets_and_gets_api_token()
+    {
+        $token = 'foo';
+        $this->getToken()->shouldReturn(null);
+        $this->setToken($token)->shouldReturn($this);
+        $this->getToken()->shouldReturn($token);
+    }
 }
