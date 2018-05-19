@@ -12,4 +12,9 @@ class FCMSpec extends ObjectBehavior
     {
         $this->shouldHaveType(FCM::class);
     }
+
+    function it_implements_driver_interface()
+    {
+        $this->shouldImplement('Matthewbdaly\PushNotification\Contracts\Driver');
+    }
 }

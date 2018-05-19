@@ -2,6 +2,8 @@
 
 namespace Matthewbdaly\PushNotification\Drivers;
 
-class FCM
+use Matthewbdaly\PushNotification\Contracts\Driver;
+
+class FCM implements Driver
 {
 }
