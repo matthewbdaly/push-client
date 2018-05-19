@@ -2,7 +2,7 @@
     "name": "matthewbdaly/api-client-boilerplate",
     "description": "PHP API client boilerplate",
     "type": "library",
-    "keywords": ["api","client"],
+    "keywords": ["push","notification", "notifications"],
     "require": {
         "psr/http-message": "^1.0",
         "php-http/client-implementation": "^1.0",
