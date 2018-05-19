@@ -6,11 +6,11 @@ use Matthewbdaly\PushNotification\Contracts\Driver;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 
-class FCM implements Driver
+class FCM extends Base implements Driver
 {
-    private $name = 'FCM';
+    protected $name = 'FCM';
 
-    private $baseUrl = 'https://fcm.googleapis.com/v1/{parent=projects/*}/messages:send';
+    protected $baseUrl = 'https://fcm.googleapis.com/v1/{parent=projects/*}/messages:send';
 
     public function __construct(string $id, HttpClient $client, MessageFactory $messageFactory)
     {
@@ -18,18 +18,8 @@ class FCM implements Driver
         $this->messageFactory = $messageFactory;
     }
 
-    public function getName()
-    {
-        return $this->name;
-    }
-
     public function sendRequest($msg)
     {
         return true;
-    }
-
-    public function getBaseUrl()
-    {
-        return $this->baseUrl;
     }
 }
