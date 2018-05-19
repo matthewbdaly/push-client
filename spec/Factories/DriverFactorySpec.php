@@ -7,6 +7,8 @@ use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Http\Discovery\Strategy\MockClientStrategy;
 use Http\Discovery\HttpClientDiscovery;
+use Http\Client\HttpClient;
+use Http\Message\MessageFactory;
 
 class DriverFactorySpec extends ObjectBehavior
 {
@@ -27,5 +29,13 @@ class DriverFactorySpec extends ObjectBehavior
             'id' => 'cheesy-lentils-123456'
         ];
         $this->create($args)->shouldReturnAnInstanceOf('Matthewbdaly\PushNotification\Drivers\FCM');
+    }
+
+    function it_accepts_params_for_fcm_driver(HttpClient $client, MessageFactory $messageFactory)
+    {
+        $args = [
+            'id' => 'cheesy-lentils-123456'
+        ];
+        $this->create($args, $client, $messageFactory)->shouldReturnAnInstanceOf('Matthewbdaly\PushNotification\Drivers\FCM');
     }
 }
