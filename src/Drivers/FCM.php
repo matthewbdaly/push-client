@@ -8,9 +8,9 @@ use Http\Message\MessageFactory;
 
 class FCM implements Driver
 {
-    protected $name = 'FCM';
+    private $name = 'FCM';
 
-    protected $baseUrl = 'https://fcm.googleapis.com/v1/{parent=projects/*}/messages:send';
+    private $baseUrl = 'https://fcm.googleapis.com/v1/{parent=projects/*}/messages:send';
 
     public function __construct(string $id, HttpClient $client, MessageFactory $messageFactory)
     {

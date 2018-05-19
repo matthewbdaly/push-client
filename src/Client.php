@@ -7,7 +7,7 @@ use Matthewbdaly\PushNotification\Contracts\Driver;
 
 class Client implements ClientInterface
 {
-    protected $driver;
+    private $driver;
 
     public function __construct(Driver $driver)
     {
