@@ -2,6 +2,8 @@
 
 namespace Matthewbdaly\PushNotification;
 
-class Client
+use Matthewbdaly\PushNotification\Contracts\Client as ClientInterface;
+
+class Client implements ClientInterface
 {
 }
