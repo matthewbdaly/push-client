@@ -46,7 +46,7 @@ class FCMSpec extends ObjectBehavior
         $params = [
         ];
         $headers = [
-            'Content-Type' => 'application/x-www-form-urlencoded',
+            'Content-Type' => 'application/json',
         ];
         $messageFactory->createRequest(
             'POST',

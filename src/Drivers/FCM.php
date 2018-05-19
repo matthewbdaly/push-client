@@ -21,7 +21,7 @@ class FCM extends Base implements Driver
     public function sendRequest($msg)
     {
         $headers = [
-            'Content-Type' => 'application/x-www-form-urlencoded',
+            'Content-Type' => 'application/json',
         ];
         $params = [
         ];
