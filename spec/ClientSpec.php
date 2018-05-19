@@ -23,4 +23,9 @@ class ClientSpec extends ObjectBehavior
     {
         $this->shouldImplement('Matthewbdaly\PushNotification\Contracts\Client');
     }
+
+    function it_gets_driver()
+    {
+        $this->getDriver()->shouldReturnAnInstanceOf('Matthewbdaly\PushNotification\Contracts\Driver');
+    }
 }

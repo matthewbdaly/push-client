@@ -3,11 +3,19 @@
 namespace Matthewbdaly\PushNotification;
 
 use Matthewbdaly\PushNotification\Contracts\Client as ClientInterface;
+use Matthewbdaly\PushNotification\Contracts\Driver;
 
 class Client implements ClientInterface
 {
-    public function __construct($argument1)
+    protected $driver;
+
+    public function __construct(Driver $driver)
     {
-        // TODO: write logic here
+        $this->driver = $driver;
+    }
+
+    public function getDriver()
+    {
+        return $this->driver;
     }
 }
