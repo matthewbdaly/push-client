@@ -10,11 +10,14 @@ class FCM extends Base implements Driver
 {
     protected $name = 'FCM';
 
-    protected $id;
+    private $id;
 
-    public function __construct(string $id, HttpClient $client, MessageFactory $messageFactory)
+    private $token;
+
+    public function __construct(string $id, string $token,HttpClient $client, MessageFactory $messageFactory)
     {
         $this->id = $id;
+        $this->token = $token;
         $this->client = $client;
         $this->messageFactory = $messageFactory;
     }
@@ -28,6 +31,7 @@ class FCM extends Base implements Driver
     {
         $headers = [
             'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer '.$this->token
         ];
         $params = [
         ];

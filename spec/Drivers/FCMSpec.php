@@ -16,7 +16,8 @@ class FCMSpec extends ObjectBehavior
     function let(HttpClient $client, MessageFactory $messageFactory)
     {
         $id = 'cheesy-lentils-123456';
-        $this->beConstructedWith($id, $client, $messageFactory);
+        $token = 'foo';
+        $this->beConstructedWith($id, $token, $client, $messageFactory);
     }
 
     function it_is_initializable()
@@ -42,11 +43,13 @@ class FCMSpec extends ObjectBehavior
     function it_returns_a_response(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request, ResponseInterface $response, StreamInterface $stream)
     {
         $id = 'cheesy-lentils-123456';
-        $this->beConstructedWith($id, $client, $messageFactory);
+        $token = 'foo';
+        $this->beConstructedWith($id, $token, $client, $messageFactory);
         $params = [
         ];
         $headers = [
             'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer '.$token
         ];
         $messageFactory->createRequest(
             'POST',

@@ -26,12 +26,14 @@ class DriverFactorySpec extends ObjectBehavior
     {
         HttpClientDiscovery::prependStrategy(MockClientStrategy::class);
         $id = 'cheesy-lentils-123456';
-        $this->create($id)->shouldReturnAnInstanceOf('Matthewbdaly\PushNotification\Drivers\FCM');
+        $token = 'foo';
+        $this->create($id, $token)->shouldReturnAnInstanceOf('Matthewbdaly\PushNotification\Drivers\FCM');
     }
 
     function it_accepts_params_for_fcm_driver(HttpClient $client, MessageFactory $messageFactory)
     {
         $id = 'cheesy-lentils-123456';
-        $this->create($id, $client, $messageFactory)->shouldReturnAnInstanceOf('Matthewbdaly\PushNotification\Drivers\FCM');
+        $token = 'foo';
+        $this->create($id, $token, $client, $messageFactory)->shouldReturnAnInstanceOf('Matthewbdaly\PushNotification\Drivers\FCM');
     }
 }
