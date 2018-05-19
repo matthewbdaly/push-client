@@ -20,6 +20,18 @@ class FCM extends Base implements Driver
 
     public function sendRequest($msg)
     {
-        return true;
+        $headers = [
+            'Content-Type' => 'application/x-www-form-urlencoded',
+        ];
+        $params = [
+        ];
+        $request = $this->messageFactory->createRequest(
+            'POST',
+            $this->getBaseUrl(),
+            $headers,
+            http_build_query($params),
+            '1.1'
+        );
+        return $this->client->sendRequest($request);
     }
 }
