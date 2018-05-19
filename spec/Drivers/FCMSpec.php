@@ -36,7 +36,7 @@ class FCMSpec extends ObjectBehavior
 
     function it_gets_base_url()
     {
-        $this->getBaseUrl()->shouldReturn('https://fcm.googleapis.com/v1/{parent=projects/*}/messages:send');
+        $this->getBaseUrl()->shouldReturn('https://fcm.googleapis.com/v1/projects/cheesy-lentils-123456/messages:send');
     }
 
     function it_returns_a_response(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request, ResponseInterface $response, StreamInterface $stream)
@@ -50,7 +50,7 @@ class FCMSpec extends ObjectBehavior
         ];
         $messageFactory->createRequest(
             'POST',
-            'https://fcm.googleapis.com/v1/{parent=projects/*}/messages:send',
+            'https://fcm.googleapis.com/v1/projects/cheesy-lentils-123456/messages:send',
             $headers,
             http_build_query($params),
             '1.1'

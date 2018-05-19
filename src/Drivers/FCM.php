@@ -10,12 +10,18 @@ class FCM extends Base implements Driver
 {
     protected $name = 'FCM';
 
-    protected $baseUrl = 'https://fcm.googleapis.com/v1/{parent=projects/*}/messages:send';
+    protected $id;
 
     public function __construct(string $id, HttpClient $client, MessageFactory $messageFactory)
     {
+        $this->id = $id;
         $this->client = $client;
         $this->messageFactory = $messageFactory;
+    }
+
+    public function getBaseUrl()
+    {
+        return "https://fcm.googleapis.com/v1/projects/".$this->id."/messages:send";
     }
 
     public function sendRequest($msg)
